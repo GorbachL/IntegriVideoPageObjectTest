@@ -9,13 +9,14 @@ public class EditMessageTest extends BaseTest {
 
     @Test
     public void validateEditMessage() {
-        String message = "Test 2.6";
-        String messageEdited = "Test 2.6 + Edit text..";
+        String message = "Test 6.2 - Отредактировать сообщение";
+        String messageEdited = "Test 6.2 + Edited text..";
         chart = new IntegriChartPage(driver);
-        chart.messageSend(message);
+        chart.openPage();
+        chart.sendMessage(message);
+        chart.clickSendMessageButton();
         chart.messageShouldContainText(message, 1);
-        //chart.clickEditMessage();
         chart.editMessage(messageEdited);
-        chart.messageShouldContainText(messageEdited + message, 1);
+        chart.messageShouldContainText(messageEdited, 1);
     }
 }

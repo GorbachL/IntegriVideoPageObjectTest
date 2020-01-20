@@ -18,7 +18,6 @@ public class BaseTest {
 
         System.setProperty("webdriver.chrome.driver", "src/test/resources/webdrivers/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://dev.integrivideo.com/demo/chat/new");
         wait = new WebDriverWait(driver, 20);
         driver.manage().window().maximize();
     }
