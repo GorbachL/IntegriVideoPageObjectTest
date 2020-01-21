@@ -28,13 +28,11 @@ public class IntegriChartPage extends BasePage {
     public static final By MESSAGE_AFTER_CODE_COPIED = By.xpath("//span[contains(text(), 'Code was copied')]");
     public static final By SETTINGS = By.cssSelector(".iv-icon.iv-icon-cog");
     public static final By PROFILE_USER_NAME = By.cssSelector(".integri-session-user-name");
-    public static final By PROFILE_USER_PHOTO = By.cssSelector(".integri-user-pic"); //[style|=background]
     public static final By ALERT_FOR_EMPTY_MESSAGE = By.xpath("//*[contains(text(), 'Message cannot be empty!')]");
-    public static final By DRUG_AND_DROP_TO_UPLOAD = By.cssSelector(".integri-chat-manual-upload.integri-pointer");
+    public static final By DRUG_AND_DROP_TO_UPLOAD = By.cssSelector(".integri-chat-manual-upload");
 
 
     public IntegriChartPage(WebDriver driver) {
-
         super(driver);
     }
 
@@ -84,6 +82,7 @@ public class IntegriChartPage extends BasePage {
 
     public void deleteMessage() {
         wait.until(ExpectedConditions.elementToBeClickable(MESSAGE_TEXT_BOX));
+        driver.findElement(MESSAGE_TEXT_BOX).click();
         driver.findElement(DELETE_MESSAGE_BUTTON).click();
     }
 
@@ -100,11 +99,10 @@ public class IntegriChartPage extends BasePage {
 
     public void openSetting() {
         wait.until(ExpectedConditions.elementToBeClickable(SETTINGS)).click();
-        //driver.findElement(SETTINGS).click();
     }
 
     public void openUploadFiles() {
-        driver.findElement(DRUG_AND_DROP_TO_UPLOAD).click();
+        wait.until(ExpectedConditions.elementToBeClickable(DRUG_AND_DROP_TO_UPLOAD)).click();
     }
 
     public void clickInviteUsersToChartButton() {
@@ -148,6 +146,5 @@ public class IntegriChartPage extends BasePage {
         String profileName = driver.findElement(PROFILE_USER_NAME).getText();
         assertEquals(profileName, userName, "smth went wrong - User Name was NOT changed");
     }
-
 }
 
