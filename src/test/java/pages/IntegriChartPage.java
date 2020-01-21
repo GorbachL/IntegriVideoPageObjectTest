@@ -2,12 +2,14 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
+import java.util.List;
 
 import static org.openqa.selenium.Keys.ENTER;
 import static org.testng.Assert.assertEquals;
@@ -21,6 +23,7 @@ public class IntegriChartPage extends BasePage {
     public static final By SEND_MESSAGE_BUTTON = By.cssSelector(".integri-chat-send-message");
     public static final By EDIT_MESSAGE_BUTTON = By.xpath("//span[@class='iv-icon iv-icon-pencil integri-chat-edit-message']");
     public static final By DELETE_MESSAGE_BUTTON = By.xpath("//span[@class='iv-icon iv-icon-trash2 integri-chat-remove-message']");
+    public static final By MESSAGE_TEXT_DATA = By.cssSelector(".integri-chat-message-date");
     public static final By REMOVED_MESSAGE = By.cssSelector(".integri-chat-message.integri-chat-message-utility");
     public static final By INVITE_BUTTON = By.xpath("//*[contains(text(), 'Invite users to chat')]");
     public static final By MESSAGE_AFTER_CLICK_INVITE = By.xpath("//span[contains(text(), 'Link was copied')]");

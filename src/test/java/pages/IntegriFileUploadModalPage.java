@@ -27,12 +27,9 @@ public class IntegriFileUploadModalPage extends BasePage {
     }
 
     public void uploadFile(int numberOfFiles, String... pathFile) {
-        //wait.until(ExpectedConditions.elementToBeClickable(BROWSE_BUTTON)).click();
         WebElement input = driver.findElement(INPUT_FILE);
         input.sendKeys(pathFile);
         driver.findElement(START_BUTTON).click();
-        List<WebElement> files = driver.findElements(FILE_LIST_FOR_UPLOADING);
-        assertEquals(files.size(), numberOfFiles, "Check the number of files to upload");
         wait.until(ExpectedConditions.visibilityOfElementLocated(UPLOAD_FILE_MODAL)).isDisplayed();
     }
 }
