@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="calculatorTest" parallel="tests">
+	<test name="test Division and Subtraction">
+		<classes>
+			<class name="tests.calculatorTest.DivisionTest">
+				<methods>
+					<include name="verifyDivide"/>
+					<exclude name="dependsOn"/>
+					<exclude name="verifyDivisionByZero"/>
+				</methods>
+			</class>
+			<class name="tests.calculatorTest.SubtractionTest"/>
+		</classes>
+	</test>
+	<test name="test 2">
+		<classes>
+			<!--			<class name="tests.calculatorTest.MultiplicationTest"/>-->
+			<class name="tests.calculatorTest.AdditionTest"/>
+		</classes>
+	</test>
+</suite>
