@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="calculatorTest" parallel="classes">
+	<test verbose="2"
+		  name="C:/Users/LenaGorbach/IdeaProjects/IntegriVideoPageObjectTest/src/test/java/tests/calculatorTest">
+		<classes>
+			<class name="tests.calculatorTest.AdditionTest">
+				<methods>
+					<include name="verifySum"/>
+				</methods>
+			</class>
+			<class name="tests.calculatorTest.DivisionTest">
+				<methods>
+					<include name="verifyDivide"/>
+					<exclude name="dependsOn"/>
+					<exclude name="verifyDivisionByZero"/>
+				</methods>
+			</class>
+			<class name="tests.calculatorTest.MultiplicationTest">
+				<methods>
+					<include name="verifyMultiply"/>
+				</methods>
+			</class>
+			<class name="tests.calculatorTest.SubtractionTest">
+				<methods>
+					<include name="verifySubstract"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
+
