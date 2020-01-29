@@ -11,11 +11,13 @@ public class UploadOneFileTest extends BaseTest {
 
     @Test
     public void uploadOneFile() {
-        String filePath = "C:\\Users\\LenaGorbach\\IdeaProjects\\IntegriVideoPageObjectTest\\src\\test\\resources\\Handout 2.pdf";
+        //String filePath = "C:\\Users\\LenaGorbach\\IdeaProjects\\IntegriVideoPageObjectTest\\src\\test\\resources\\Handout 2.pdf";
+        String filePathMac = "/Users/alenahorbach/Desktop/IntegriVideoPageObjectTest/src/test/resources/Handout 2.pdf";
         chart = new IntegriChartPage(driver);
         fileUploadModalPage = new IntegriFileUploadModalPage(driver);
         chart.openPage();
         chart.openUploadFiles();
-        fileUploadModalPage.uploadFile(1, filePath);
+        //fileUploadModalPage.uploadFile(1, filePath);
+        fileUploadModalPage.uploadFile(1, filePathMac);
     }
 }
