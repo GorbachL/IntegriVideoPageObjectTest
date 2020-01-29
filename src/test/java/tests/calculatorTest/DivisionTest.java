@@ -14,14 +14,12 @@ public class DivisionTest {
                 {5, 5, 1},
                 {15, 3, 5},
                 {15, -14, -1},
-                {0, 34, 0},
-                {27, 0, 0}
+                {0, 34, 0}
         };
     }
 
     @Test(dataProvider = "divide", description = "verify test #5", priority = 1)
     public void verifyDivide(int firstNumber, int secondNumber, int expectedResult) {
-        //int result = Integer.parseInt(expectedResult);
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -30,14 +28,16 @@ public class DivisionTest {
         assertEquals(new Calculator().division(firstNumber, secondNumber), expectedResult);
     }
 
-    @Test(retryAnalyzer = Retry.class)
-    public void dependsOn() {
-        throw new ArithmeticException();
-    }
+//    @Test(retryAnalyzer = Retry.class)
+//    public void dependsOn() {
+//        throw new ArithmeticException();
+//    }
 
-    @Test(alwaysRun = true, dependsOnMethods = "dependsOn")
+    @Test(alwaysRun = true, expectedExceptions = ArithmeticException.class)
     public void verifyDivisionByZero() {
-        assertEquals(new Calculator().division(2, 0), 0);
+        int a = 2;
+        int b = 0;
+        Calculator calculator = new Calculator();
+        calculator.division(a, b);
     }
-
 }

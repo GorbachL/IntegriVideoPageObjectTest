@@ -28,5 +28,4 @@ public class MultiplicationTest {
         }
         assertEquals(new Calculator().multiplication(firstNumber, secondNumber), expectedResult);
     }
-
 }
