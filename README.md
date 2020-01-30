@@ -117,4 +117,11 @@ All tests have been run.
 
 -4- Создать альтернативный pom.xml и запустить из него mvn билд
 
+ > mvn -f{path-to-another/pom.xml}
+
+ -f,--file <arg>                        Force the use of an alternate POM
+                                        file (or directory with pom.xml)
+
 -5- Пробросить параметр из mvn command line внутрь теста
+
+ > mvn -DtestProp=test123
