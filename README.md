@@ -5,6 +5,7 @@
 
 -2- Запустить тесты используя mvn clean test команду
  
+ # Run all the unit test classes.
  - > mvn clean test
  - Tests run: 45, Failures: 0, Errors: 0, Skipped: 0
  - BUILD SUCCESS
@@ -19,6 +20,7 @@ https://maven.apache.org/surefire/maven-surefire-plugin/examples/single-test.htm
  - BUILD SUCCESS
  
 *** 
+ # Run a single test class.
 > mvn -Dtest=MultiplicationTest test
  
  [INFO]  T E S T S
@@ -37,6 +39,7 @@ https://maven.apache.org/surefire/maven-surefire-plugin/examples/single-test.htm
  [INFO] Finished at: 2020-01-29T18:46:32+03:00
  
 ***
+ # Run a single test method from a test class.
  > mvn -Dtest=AdditionTest#verifySum test
 
 [INFO]  T E S T S
@@ -61,7 +64,7 @@ https://maven.apache.org/surefire/maven-surefire-plugin/examples/single-test.htm
 [INFO] ------------------------------------------------------------------------
 
 ***
-
+ # Run multiple methods from a test class. 
  > mvn -Dtest=DivisionTest#verifyDivide+verifyDivisionByZero test
 
 [INFO]  T E S T S
@@ -78,6 +81,36 @@ https://maven.apache.org/surefire/maven-surefire-plugin/examples/single-test.htm
 [INFO] ------------------------------------------------------------------------
 [INFO] Total time:  7.011 s
 [INFO] Finished at: 2020-01-29T18:53:13+03:00
+[INFO] ------------------------------------------------------------------------
+
+***
+ # Run multiple test classes.
+> mvn -Dtest=DivisionTest,SubtractionTest test
+
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+Run the latest tests.
+All tests have been run.
+Run the latest tests.
+All tests have been run.
+Run the latest tests.
+All tests have been run.
+Run the latest tests.
+All tests have been run.
+Run the latest tests.
+All tests have been run.
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.615 s - in TestSuite
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  24.664 s
+[INFO] Finished at: 2020-01-30T13:35:12+03:00
 [INFO] ------------------------------------------------------------------------
 
 ***
