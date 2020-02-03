@@ -119,8 +119,9 @@ All tests have been run.
 
  > mvn -f{path-to-another/pom.xml}
 
- -f,--file <arg>                        Force the use of an alternate POM
-                                        file (or directory with pom.xml)
+mvn -f pom.xml test
+mvn -f myPom.xml test
+
 
 -5- Пробросить параметр из mvn command line внутрь теста //
 
