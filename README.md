@@ -124,4 +124,24 @@ All tests have been run.
 
 -5- Пробросить параметр из mvn command line внутрь теста //
 
- > mvn -DtestProp=test123
+ > mvn -Dtest=DivisionTest#runTest -DtestProp=NEW-prop-set test
+
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running tests.calculatorTest.DivisionTest
+testProp is set to: NEW-prop-set
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.409 s - in tests.calculatorTest.DivisionTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.616 s
+[INFO] Finished at: 2020-02-03T13:14:06+03:00
+[INFO] ------------------------------------------------------------------------
+
+***

@@ -43,6 +43,6 @@ public class DivisionTest {
 
     @Test
     public void runTest() {
-        System.out.println("testProp");
+        System.out.println("testProp is set to: " + System.getProperty("testProp"));
     }
 }
