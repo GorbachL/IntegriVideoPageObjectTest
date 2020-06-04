@@ -32,6 +32,7 @@ public class AdditionTest {
         final Thread thread = Thread.currentThread();
         System.out.printf("#%d %s: %s : %s", thread.getId(), thread.getName(), firstNumber, secondNumber);
         System.out.println();
+
     }
 }
 
@@ -48,4 +49,15 @@ description, +
 priority, +
 invocationCount, +
 threadPoolSize +
+ */
+
+/*
+        try {
+            Cart cart = gson.fromJson(new FileReader("src/main/resources/andrew-cart.json"), Cart.class);   // deserialize json into cart
+            String result = gson.toJson(cart);  // serializes cart to Json
+            String expectedResult = "{\"cartName\":\"andrew-cart\",\"realItems\":[{\"weight\":1560.0,\"name\":\"Audi\",\"price\":32026.9}],\"virtualItems\":[{\"sizeOnDisk\":20000.0,\"name\":\"Windows\",\"price\":11.0}],\"total\":38445.479999999996}";
+            assertEquals(result, expectedResult);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
  */
