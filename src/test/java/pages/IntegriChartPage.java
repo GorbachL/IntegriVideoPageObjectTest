@@ -1,9 +1,11 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import utils.AllureUtils;
 
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
@@ -39,28 +41,36 @@ public class IntegriChartPage extends BasePage {
         super(driver);
     }
 
+    @Step("Open integrivideo page")
     public void openPage() {
         driver.get(URL);
+        AllureUtils.takeScreenshot(driver);
     }
 
+    @Step("Send message")
     public void sendMessage(String message) {
         wait.until(ExpectedConditions.elementToBeClickable(MESSAGE_INPUT_TEXT));
         driver.findElement(MESSAGE_INPUT_TEXT).sendKeys(message);
+        AllureUtils.takeScreenshot(driver);
     }
 
+    @Step("Click Send Message button")
     public void clickSendMessageButton() {
         driver.findElement(SEND_MESSAGE_BUTTON).click();
+        AllureUtils.takeScreenshot(driver);
     }
 
     public void sendMessageViaEnter() {
         driver.findElement(MESSAGE_INPUT_TEXT).sendKeys(ENTER);
     }
 
+    @Step("Validate results - message should contain text")
     public void messageShouldContainText(String message, int messageNumber) {
         wait.until(ExpectedConditions.elementToBeClickable(MESSAGE_TEXT_BOX));
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(MESSAGE_TEXT_BOX, messageNumber - 1));
         String text = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(MESSAGE_TEXT_BOX)).get(messageNumber - 1).getText();
         assertEquals(message, text, "The text of the message does not match the text that has been sent");
+        AllureUtils.takeScreenshot(driver);
     }
 
     public void editMessageDeletingAllText() {
