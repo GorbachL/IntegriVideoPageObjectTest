@@ -40,4 +40,9 @@ public class DivisionTest {
         Calculator calculator = new Calculator();
         calculator.division(a, b);
     }
+
+    @Test
+    public void runTest() {
+        System.out.println("testProp is set to: " + System.getProperty("testProp"));
+    }
 }
